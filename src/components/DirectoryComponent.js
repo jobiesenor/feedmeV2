@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
+import SelectionInfo from './SelectionInfoComponent';
 
 
 class Directory extends Component {
@@ -12,21 +13,6 @@ class Directory extends Component {
 
     onChosenSelection(selection) {
         this.setState({chosenSelection: selection});
-    }
-
-    renderChosenSelection(selection){
-        if(selection) {
-            return (
-                <Card> 
-                    <CardImg top src={selection.image} alt={selection.name} />
-                    <CardBody>
-                        <CardTitle>{selection.name}</CardTitle>
-                        <CardText>{selection.description}</CardText>
-                    </CardBody>
-                </Card>
-            );
-        }
-        return <div />;
     }
 
     render() {
@@ -50,7 +36,7 @@ class Directory extends Component {
                 </div>
                 <div className="row">
                     <div className="col-md-5 m1">
-                        {this.renderChosenSelection(this.state.selectedCampsite)}
+                       <SelectionInfo selection={this.state.chosenSelection} />
                     </div>
                 </div>
             </div>
