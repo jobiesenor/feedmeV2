@@ -4,16 +4,16 @@ import { Card, CardText, CardImg, CardBody, CardTitle } from 'reactstrap';
 
 class SelectionInfo extends Component {
    
-    renderComments(comments) {
-        if(comments) {
+    renderButtons(buttons) {
+        if(buttons) {
             return (
                 <div className="col-md-5 m-1">
                     <h4>Whats are we eating?</h4>
-                    {comments.map(comment => {
+                    {buttons.map(button => {
                         return (
-                            <div key={comment.id}>
-                                <p>{comment.text} <br />
-                                --- {comment.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}
+                            <div key={button.id}>
+                                <p>{button.text} <br />
+                                --- {button.author}, 
                                 </p>
                             </div>    
                         )
@@ -42,10 +42,12 @@ class SelectionInfo extends Component {
         render() {
             if (this.props.selection) {
                 return (
+                <div class="container">
                     <div className="row">
                             {this.renderSelection(this.props.selection)}
-                            {this.renderComments(this.props.selection.comments)}
+                            {this.renderButtons(this.props.selection.buttons)}
                     </div>
+                </div>
                 );
             }
 

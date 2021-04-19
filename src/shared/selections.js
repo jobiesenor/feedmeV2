@@ -4,13 +4,14 @@ export const SELECTIONS = [
         name: 'GoEat',
         image: 'assests/imgs/NYchinesefood.jpeg',
         description: 'Food on the go',
-        comments: [
+        buttons: [
             {
-                id: 0,
-                rating: 5, 
-                text: "What a magnificent view!",
-                author: "jabroni stromboli",
-                date: "2018-10-25T16:30Z"
+                id: 1,
+                rating: 4, 
+                text: "The campground was beautiful, but the bugs could bite sometimes.",
+                author: "Brennen Ech",
+                date: "2017-06-17T03:33Z"
+               
             },
             {
                 id: 1,
@@ -47,7 +48,7 @@ export const SELECTIONS = [
         name: 'Dine-In',
         image: 'assests/imgs/FineDining.jpeg',
         description: 'Reservations Please',
-        comments: [
+        buttons: [
             {
                 id: 0,
                 rating: 5, 
@@ -90,7 +91,7 @@ export const SELECTIONS = [
         name: 'Show Me!',
         image: 'assests/imgs/homecooking.jpeg',
         description: 'Professional-ish Homecook',
-        comments: [
+        buttons: [
             {
                 id: 0,
                 rating: 5, 
@@ -133,7 +134,7 @@ export const SELECTIONS = [
         name: 'Trending',
         image: 'assests/imgs/hotspots.jpeg',
         description: 'Professional-ish Homecook',
-        comments: [
+        buttons: [
             {
                 id: 0,
                 rating: 5, 
