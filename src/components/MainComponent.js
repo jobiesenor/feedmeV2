@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Navbar, NavbarBrand } from 'reactstrap';
+import Header from './HeaderComponent';
+import Footer from './FooterComponent';
 import Directory from './DirectoryComponent';
 import { SELECTIONS } from '../shared/selections';
 import SelectionInfo from './SelectionInfoComponent';
@@ -22,13 +23,10 @@ class Main extends Component {
     render() {
         return (
             <div>
-                <Navbar dark color="primary">
-                <div className="container">
-                    <NavbarBrand href="/"> FEEDme</NavbarBrand>
-                </div>  
-                </Navbar>
+                <Header />
                 <Directory selections={this.state.selections} onClick={selectionId => this.onChosenSelection(selectionId)} />
                 <SelectionInfo selection={this.state.selections.filter(selection => selection.id === this.state.chosenSelection)[0]} />
+                <Footer />  
             </div>
         );
     }

@@ -1,19 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
 
+function RenderDirectoryItem({selection, onClick}) {
+    return (
+        <Card onClick={() => onClick(selection.id) }> 
+            <CardImg width="100%" src={selection.image} alt={selection.name} height='350px' width='300px' />
+            <CardImgOverlay>
+                <CardTitle>{selection.name}</CardTitle>
+            </CardImgOverlay>
+        </Card>
+    )
+}
 
-class Directory extends Component {
 
-    render() {
-        const directory = this.props.selections.map(selection => {
+
+
+function Directory(props) {
+
+        const directory = props.selections.map(selection => {
             return ( 
                 <div key={selection.id} className="col-md-5 m-1">
-                   <Card onClick={() => this.props.onClick(selection.id) }> 
-                        <CardImg width="100%" src={selection.image} alt={selection.name} />
-                        <CardImgOverlay>
-                            <CardTitle>{selection.name}</CardTitle>
-                        </CardImgOverlay>
-                    </Card>
+                  <RenderDirectoryItem selection={selection} onClick={props.onClick} />
                 </div>
             );
         });
@@ -26,6 +33,6 @@ class Directory extends Component {
             </div>
         );
     }
-}
+
 
 export default Directory;
