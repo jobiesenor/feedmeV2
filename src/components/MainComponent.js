@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import Directory from './DirectoryComponent';
+import SelectionInfo from './SelectionInfoComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
-import Directory from './DirectoryComponent';
+import Home from './HomeComponent';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import { SELECTIONS } from '../shared/selections';
-import SelectionInfo from './SelectionInfoComponent';
+
+
 
 
 
@@ -11,21 +15,29 @@ class Main extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selections: SELECTIONS,
-            chosenSelection: null
+            selections: SELECTIONS
         };
     }
 
-    onChosenSelection(selectionId) {
-        this.setState({chosenSelection: selectionId});
-    }
+
 
     render() {
+
+        const HomePage = () => {
+            return (
+                <Home />
+            );
+        };
+
+
         return (
             <div>
                 <Header />
-                <Directory selections={this.state.selections} onClick={selectionId => this.onChosenSelection(selectionId)} />
-                <SelectionInfo selection={this.state.selections.filter(selection => selection.id === this.state.chosenSelection)[0]} />
+                <Switch>
+                    <Route path='/home' component={HomePage} />
+                    <Route exact path='/directory' render={() => <Directory selections={this.state.selections} />} />
+                    <Redirect to='/home' />
+                </Switch>
                 <Footer />  
             </div>
         );

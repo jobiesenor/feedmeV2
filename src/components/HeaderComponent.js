@@ -9,6 +9,13 @@ class Header extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col">
+                            <img
+                            src="../assests/imgs/FeedmeLogo.png"
+                            width="100"
+                            height="100"
+                            className=""
+                            alt="FEEDme logo"
+                            />
                                 <h1>FEEDme</h1>
                                 <h2>What are you in the mood for?</h2>
                             </div>
@@ -17,7 +24,15 @@ class Header extends Component {
                 </Jumbotron>
                 <Navbar dark sticky="top">
                     <div className="container">
-                        <NavbarBrand href="/">FEEDme</NavbarBrand>
+                        <NavbarBrand href="/">
+                        <img
+                            src="../assests/imgs/FeedmeLogo.png"
+                            width="30"
+                            height="30"
+                            className="d-inline-block"
+                            alt="FEEDme logo"
+                            />
+                            FEEDme</NavbarBrand>
                     </div>
                 </Navbar>
             </React.Fragment>
