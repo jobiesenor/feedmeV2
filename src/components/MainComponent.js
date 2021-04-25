@@ -4,6 +4,7 @@ import SelectionInfo from './SelectionInfoComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Home from './HomeComponent';
+import Contact from './ContactComponent';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { SELECTIONS } from '../shared/selections';
 
@@ -36,6 +37,7 @@ class Main extends Component {
                 <Switch>
                     <Route path='/home' component={HomePage} />
                     <Route exact path='/directory' render={() => <Directory selections={this.state.selections} />} />
+                    <Route exact path='/contact' component={Contact} />
                     <Redirect to='/home' />
                 </Switch>
                 <Footer />  
