@@ -6,7 +6,7 @@ function RenderDirectoryItem({selection}) {
         <Card> 
             <CardImg width="100%" src={selection.image} alt={selection.name} height='350px' width='300px' />
             <CardImgOverlay>
-                <CardTitle>{selection.name}</CardTitle>
+                <CardTitle><a href={selection.url} target='_blank'><button id="myButtons" class="btn-lg">{selection.name}</button></a></CardTitle>
             </CardImgOverlay>
         </Card>
     )

@@ -7,6 +7,7 @@ import Home from './HomeComponent';
 import Contact from './ContactComponent';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { SELECTIONS } from '../shared/selections';
+import { BUTTONS } from '../shared/buttons';
 
 
 
@@ -16,7 +17,7 @@ class Main extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selections: SELECTIONS
+            selections: SELECTIONS,
         };
     }
 
@@ -26,7 +27,10 @@ class Main extends Component {
 
         const HomePage = () => {
             return (
-                <Home />
+                <Home 
+                    selections={this.state.selections.filter(selection => selection.featured)[0]}
+                   
+                />
             );
         }
 

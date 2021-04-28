@@ -2,7 +2,7 @@ body {
     font-family: "Open Sans", sans-serif;
 }
 
-h1, h2, h3, .card-body>.card-title {
+h1, h2, h3, .card-body, .card-title {
     font-family: "Lobster", cursive;
 }
 
@@ -16,8 +16,8 @@ h2 {
 }
 
 .card-img-overlay .card-title {
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
+    color: Salmon;
+    
 }
 
 .row-content {
@@ -27,14 +27,14 @@ h2 {
 }
 
 .site-footer {
-    background-image: linear-gradient(rgb(0, 195, 255), white);
+    background-image: linear-gradient(turquoise, white);
     padding: 20px 0;
 }
 
 .jumbotron {
     margin: 0;
     padding: 30px;
-    background-image: linear-gradient(to right, #f70000, white);
+    background-image: linear-gradient(to right, #f70000, salmon);
     color: white;
 }
 
@@ -43,11 +43,8 @@ h2 {
 }
 
 .navbar-dark {
-    background-color: rgb(0, 195, 255);
+    background-image:linear-gradient(to right, turquoise, salmon);
     
    
 }
 
-.navbarbrand {
-    
-}
