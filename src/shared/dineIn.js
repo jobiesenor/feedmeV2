@@ -22,5 +22,13 @@ export const DINEINS = [
         description: "Book your reservation and invite a few friends to tag along, all in just a few taps.",
         image: '/assests/imgs/opentable1.png',
         url: "https://www.opentable.com/" 
+    },
+    {
+        id: 3,
+        dineId: 3,
+        name: "Trending", 
+        description: "Discover new resturants near you.",
+        image: '/assests/imgs/hotspots.jpeg',
+        url: "https://www.exploretock.com/new" 
     }
 ];

@@ -20,7 +20,7 @@ function feedMeGame(e){
     const myOpts = ['Go Eat', 'Dine-IN', 'Show Me!'];
     const feedMe = myOpts[Math.floor(Math.random() * myOpts.length)];
     
-    return alert(feedMe);
+    return alert(feedMe); 
 }
 
 function Home(props) {
@@ -30,7 +30,8 @@ function Home(props) {
             <div className="row">
                 <div className="col-md m-1">
                     <h4>Welcome to FeedMe </h4> 
-                    <p>...the game that helps you chose your next meal. Simply click the FEEDme button and you will be given a randomly selected option. You can either go eat, dine-in, or show me and be taught recipes hands-on.</p>
+                    <h2>The game that helps you chose your next meal.</h2> 
+                    <p>To start click the FEEDme button and you will be given a randomly selected option. Your options include go-eat(food on the go), dine-in(make a reservation nearby), or show-me!(get hands on with trending recipes). Once given a selection go to the directory and chose your option. Happy eating. </p>
                     <button className="btn-danger btn-lg" type="submit" onClick={feedMeGame}> FEEDme </button>
                 </div>
                 <div className="col-md m-1">

@@ -4,13 +4,13 @@ import { Card, CardText, CardImg, CardBody, CardTitle } from 'reactstrap';
 
 function RenderDineIn({dinein}) {
     return (
-        <div className="col-md-5 m-1">
+        <div className="col-md m-1">
                     <Card> 
-                        <CardImg width="100%" src={dinein.image} alt={dinein.name} />
+                        <CardImg width="100" height="200" src={dinein.image} alt={dinein.name} />
                         <CardBody>
                             <CardTitle>{dinein.name}</CardTitle>
                             <CardText>{dinein.description}</CardText>
-                            <CardText><a href={dinein.url} target='_blank'><button class=" btn-lg btn-danger">{dinein.name}</button></a></CardText>
+                            <CardText><a href={dinein.url} target='_blank'><button class=" btn-lg btn-info">{dinein.name}</button></a></CardText>
                         </CardBody>
                     </Card>
                   </div>
