@@ -3,12 +3,12 @@ body {
 }
 
 h1, h2, h3, .card-body, .card-title {
-    font-family: "Lobster", cursive;
+    font-family: 'Lobster', cursive;
 }
 
 .card-title {
     font-weight: 500;
-    font-size: 1.25rem;
+    font-size: 1.50rem;
 }
 
 h2 {
@@ -17,6 +17,12 @@ h2 {
 
 .card-img-overlay .card-title {
     color: Salmon;
+    
+}
+
+#myButtons {
+    background-color: salmon;
+    color: white;
     
 }
 
@@ -34,7 +40,7 @@ h2 {
 .jumbotron {
     margin: 0;
     padding: 30px;
-    background-image: linear-gradient(to right, #f70000, salmon);
+    background-image: linear-gradient(to right,turquoise, salmon);
     color: white;
 }
 

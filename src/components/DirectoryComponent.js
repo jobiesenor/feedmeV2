@@ -1,14 +1,19 @@
 import React from 'react';
 import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 function RenderDirectoryItem({selection}) {
     return (
+        
         <Card> 
-            <CardImg width="100%" src={selection.image} alt={selection.name} height='350px' width='300px' />
-            <CardImgOverlay>
+            <Link to={`/directory/${selection.id}`}>
+                <CardImg width="100%" src={selection.image} alt={selection.name} height='300px' width='350px' />
+                <CardImgOverlay>
                 <CardTitle><a href={selection.url} target='_blank'><button id="myButtons" class="btn-lg">{selection.name}</button></a></CardTitle>
-            </CardImgOverlay>
+                </CardImgOverlay>
+            </Link>
         </Card>
+      
     )
 }
 
