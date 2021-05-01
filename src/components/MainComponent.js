@@ -4,45 +4,39 @@ import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Home from './HomeComponent';
 import Contact from './ContactComponent';
-import { Switch, Route, Redirect } from 'react-router-dom';
-import { SELECTIONS } from '../shared/selections';
-import { GOEATS } from '../shared/goeat';
-import { DINEINS } from '../shared/dineIn';
-import { SHOWME } from '../shared/showme';
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import GoEatsPg from './GoEatsComponent';
 import DineInPg from './DineInComponent';
 import ShowMePg from './ShowMeComponent';
+import { connect } from 'react-redux';
 
 
+const mapStateToProps = state => {
+    return {
+        selections: state.selections, 
+        goeats: state.goeats,
+        dineins: state.dineins,
+        showme: state.showme
 
-
+    };
+};
 
 class Main extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            selections: SELECTIONS,
-            goeats: GOEATS,
-            dineins: DINEINS,
-            showme: SHOWME
-        };
-    }
-
-
 
     render() {
 
         const HomePage = () => {
             return (
                 <Home 
-                    selections={this.state.selections.filter(selection => selection.featured)[0]}
-                    goeats={this.state.goeats.filter(goeat => goeat.featured)[0]}
-                    dineins={this.state.dineins.filter(dinein => dinein.featured)[0]}
+                    selections={this.props.selections.filter(selection => selection.featured)[0]}
+                    goeats={this.props.goeats.filter(goeat => goeat.featured)[0]}
+                    dineins={this.props.dineins.filter(dinein => dinein.featured)[0]}
+                    showme={this.props.showme.filter(showme => showme.featured)[0]}
                     
 
                 />
             );
-        }
+        };
          
 
         return (
@@ -50,10 +44,10 @@ class Main extends Component {
                 <Header />
                 <Switch>
                     <Route path='/home' component={HomePage} />
-                    <Route exact path='/directory' render={() => <Directory selections={this.state.selections} />} />
-                    <Route path='/directory/0' render={() => <GoEatsPg goeats={this.state.goeats} />} />
-                    <Route path='/directory/1' render={() => <DineInPg dineins={this.state.dineins} />} />
-                    <Route path='/directory/2' render={() => <ShowMePg showme={this.state.showme} />} />
+                    <Route exact path='/directory' render={() => <Directory selections={this.props.selections} />} />
+                    <Route path='/directory/0' render={() => <GoEatsPg goeats={this.props.goeats} />} />
+                    <Route path='/directory/1' render={() => <DineInPg dineins={this.props.dineins} />} />
+                    <Route path='/directory/2' render={() => <ShowMePg showme={this.props.showme} />} />
                     <Route exact path='/contact' component={Contact} />
                     <Redirect to='/home' />
                 </Switch>
@@ -63,4 +57,4 @@ class Main extends Component {
     }
 }
 
-export default Main;
+export default withRouter(connect(mapStateToProps)(Main));
