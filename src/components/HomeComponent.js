@@ -8,7 +8,7 @@ function RenderCard({item}) {
             <CardBody>
                 <CardTitle>{item.name}</CardTitle>
                 <CardText>{item.description}</CardText>
-                <CardText><a href={item.url} target='_blank'><button class=" btn-lg btn-info">{item.name}</button></a></CardText>
+                <CardText><a href={item.url}><button class=" btn-lg btn-info">{item.name}</button></a></CardText>
             </CardBody>
         </Card>
     );

@@ -4,6 +4,7 @@ import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Home from './HomeComponent';
 import Contact from './ContactComponent';
+import Trending from './TrendingComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import GoEatsPg from './GoEatsComponent';
 import DineInPg from './DineInComponent';
@@ -48,7 +49,9 @@ class Main extends Component {
                     <Route path='/directory/0' render={() => <GoEatsPg goeats={this.props.goeats} />} />
                     <Route path='/directory/1' render={() => <DineInPg dineins={this.props.dineins} />} />
                     <Route path='/directory/2' render={() => <ShowMePg showme={this.props.showme} />} />
+                    <Route path='/directory/3' component={Trending} />
                     <Route exact path='/contact' component={Contact} />
+                    <Route exact path='/trending' component={Trending} />
                     <Redirect to='/home' />
                 </Switch>
                 <Footer />  

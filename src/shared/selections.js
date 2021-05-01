@@ -30,6 +30,6 @@ export const SELECTIONS = [
         image: 'assests/imgs/hotspots.jpeg',
         featured: true,
         description: 'Find the new spots in town!',
-        url:'https://feedmev1.netlify.app/trending.html'
+        url:'/trending'
     }
 ];
