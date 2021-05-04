@@ -10,6 +10,7 @@ import GoEatsPg from './GoEatsComponent';
 import DineInPg from './DineInComponent';
 import ShowMePg from './ShowMeComponent';
 import { connect } from 'react-redux';
+import { fetchSelections } from '../redux/ActionCreators';
 
 
 const mapStateToProps = state => {
@@ -22,19 +23,24 @@ const mapStateToProps = state => {
     };
 };
 
+const mapDispatchToProps = {
+    fetchSelections: () => (fetchSelections())
+}
+
 class Main extends Component {
+
+    componentDidMount() {
+        this.props.fetchSelections();
+    }
 
     render() {
 
         const HomePage = () => {
             return (
                 <Home 
-                    selections={this.props.selections.filter(selection => selection.featured)[0]}
-                    goeats={this.props.goeats.filter(goeat => goeat.featured)[0]}
-                    dineins={this.props.dineins.filter(dinein => dinein.featured)[0]}
-                    showme={this.props.showme.filter(showme => showme.featured)[0]}
-                    
-
+                    selection={this.props.selections.selections.filter(selection => selection.featured)[0]}
+                    selectionsLoading={this.props.selections.isLoading}
+                    selectionsErrMess={this.props.selections.errMess}
                 />
             );
         };
@@ -60,4 +66,4 @@ class Main extends Component {
     }
 }
 
-export default withRouter(connect(mapStateToProps)(Main));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));
