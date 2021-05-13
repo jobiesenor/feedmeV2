@@ -3,7 +3,7 @@ import * as ActionTypes from './ActionTypes';
 export const Selections = (state = {
         isLoading: true,
         errMess: null,
-        selections: [ ]
+        selections: []
 }, action) => {
     switch (action.type) {
         case ActionTypes.ADD_SELECTIONS: 

@@ -4,7 +4,7 @@ import logger from 'redux-logger';
 import { DineIns } from './dinein';
 import { GoEats } from './goeat';
 import { Selections } from './selections';
-import { ShowMe } from './showme';
+import { ShowMes } from './showme';
 
 
 
@@ -14,7 +14,7 @@ export const ConfigureStore = () => {
             dineins: DineIns,
             goeats: GoEats,
             selections: Selections,
-            showme: ShowMe
+            showmes: ShowMes
         }),
         applyMiddleware(thunk, logger) 
     );

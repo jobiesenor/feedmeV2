@@ -1,8 +1,14 @@
 import React from 'react';
 import { Card, CardText, CardImg, CardBody, CardTitle } from 'reactstrap';
+import { Loading } from './LoadingComponent';
 
-
-function RenderShowMe({showme}) {
+function RenderShowMe({showme, isLoading, errMess}) {
+    if(isLoading){
+        return <Loading />;
+    }
+    if(errMess){
+        return <h4>{errMess}</h4>;
+    }   
     return (
         <div className="col-md-5 m-1">
                     <Card> 
@@ -13,15 +19,14 @@ function RenderShowMe({showme}) {
                             <CardText><a href={showme.url} target='_blank'><button class=" btn-lg btn-danger">{showme.name}</button></a></CardText>
                         </CardBody>
                     </Card>
-                  </div>
+        </div>
     ); 
 
 }
     
-
 function ShowMePg(props) {
 
-    const showMepg = props.showme.map(showme => {
+    const showmepg = props.showmes.showmes.map(showme => {
         return ( 
             <div key={showme.id} className="col-md-5 m-1">
               <RenderShowMe showme={showme} />
@@ -32,7 +37,7 @@ function ShowMePg(props) {
     return (
         <div className="container">
             <div className="row">
-                    {showMepg}
+                    {showmepg}
             </div>
         </div>
     );

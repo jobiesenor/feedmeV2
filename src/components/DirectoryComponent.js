@@ -19,9 +19,6 @@ function RenderDirectoryItem({selection}) {
     )
 }
 
-
-
-
 function Directory(props) {
     if (props.isLoading) {
         return (

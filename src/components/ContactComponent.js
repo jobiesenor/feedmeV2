@@ -56,7 +56,7 @@ class Contact extends Component {
                     </address>
                 </div>
                 <div className="col">
-                    <h2>Send Us an email @<a role="button" className="btn btn-link" href="mailto:jobiesenor@gmail.com"><i className="fa fa-envelope-o" />FEEDme@now.com</a></h2>
+                    <h2>Send Us an email<a role="button" className="btn btn-link" href="mailto:jobiesenor@gmail.com"><i className="fa fa-envelope-o" />FEEDme@now.com</a></h2>
                     <p>Or give us a call at 1-900-OUU-IM-SO-HUNGRY</p>
                 </div>
             </div>

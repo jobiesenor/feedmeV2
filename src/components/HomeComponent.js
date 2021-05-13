@@ -39,12 +39,12 @@ function Home(props) {
                 <div className="col-md m-1">
                     <h4>Welcome to FeedMe </h4> 
                     <h2>The game that helps you chose your next meal.</h2> 
-                    <p>To start click the FEEDme button and you will be given a randomly selected option. Your options include go-eat(food on the go), dine-in(make a reservation nearby), or show-me!(get hands on with trending recipes). Once given a selection go to the directory and chose your option. Happy eating. </p>
+                    <p>To start click the FEEDme button and you will be given a randomly selected option. Your options include go-eat(food on the go), dine-in(make a reservation nearby), or show-me!(get hands on with trending recipes). Once given a selection go to the directory and chose your option. Eat well my friends. </p>
                     <button className="btn-danger btn-lg" type="submit" onClick={feedMeGame}> FEEDme </button>
                 </div>
                 <div className="col-md m-1">
                     <RenderCard 
-                        item={props.selection} 
+                        item={props.selections} 
                         isLoading={props.selectionsLoading}
                         errMess={props.selectionsErrMess}
                     />
